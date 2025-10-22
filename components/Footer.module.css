@@ -1,0 +1,160 @@
+.footer {
+  background-color: #0a0a0a;
+  color: var(--muted-foreground);
+  padding: var(--spacing-16) 0 var(--spacing-8);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-12);
+}
+
+.brandInfo {
+  max-width: 350px;
+}
+
+.brandInfo > div {
+  transition: filter var(--animation-duration-normal) ease;
+}
+
+.brandInfo > div:hover {
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+}
+
+.tagline {
+  margin: var(--spacing-4) 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.socialLink {
+  color: var(--muted-foreground);
+  transition: all var(--animation-duration-fast) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius);
+}
+
+.socialLink:hover {
+  color: #d4af37;
+  background-color: rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
+}
+
+.newsletter {
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.footerHeading {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-4);
+}
+
+.signupForm {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.emailInput {
+  background-color: #1a1a1a;
+  border-color: #333;
+  color: var(--foreground);
+}
+
+.emailInput:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.signupButton {
+  background-color: #d4af37;
+  color: #000000;
+  border-color: #d4af37;
+}
+
+.signupButton:hover {
+  background-color: color-mix(in srgb, #d4af37, white 10%);
+  border-color: color-mix(in srgb, #d4af37, white 10%);
+}
+
+.bottomSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--spacing-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.copyright {
+  color: var(--muted-foreground);
+}
+
+.footerLinks {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+.footerLink {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: all var(--animation-duration-fast) ease;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+.footerLink:hover {
+  color: #d4af37;
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brandInfo {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    gap: var(--spacing-4);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .signupForm {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,115 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav-sticky);
+  padding: var(--spacing-4) 0;
+  transition:
+    background-color var(--animation-duration-normal) ease,
+    backdrop-filter var(--animation-duration-normal) ease,
+    padding var(--animation-duration-normal) ease;
+  color: #ffffff;
+}
+
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  transition: filter var(--animation-duration-normal) ease;
+}
+
+.logoLink:hover {
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-8);
+}
+
+.navLink {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  transition: color var(--animation-duration-fast) ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d4af37;
+  transition: width var(--animation-duration-normal) ease;
+}
+
+.navLink:hover {
+  color: #d4af37;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.menuButton {
+  display: none;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    max-width: 300px;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-6);
+    transform: translateX(100%);
+    transition: transform var(--animation-duration-normal) ease-in-out;
+    padding-top: 60px; /* Space for close button */
+  }
+
+  .navOpen {
+    transform: translateX(0);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .menuButton {
+    display: flex;
+    z-index: var(--z-nav-sticky); /* Ensure it's above the nav panel */
+  }
+}

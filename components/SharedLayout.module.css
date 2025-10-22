@@ -1,0 +1,12 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000000;
+  color: var(--foreground);
+  font-family: var(--font-family-base);
+}
+
+.main {
+  flex-grow: 1;
+}

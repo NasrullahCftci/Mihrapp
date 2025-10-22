@@ -1,0 +1,81 @@
+.partnership {
+  padding: var(--spacing-16) 0;
+  background-color: #050505;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #d4af37;
+  margin-bottom: var(--spacing-4);
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-8);
+}
+
+.contactButtons {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.emailButton {
+  background-color: #d4af37;
+  color: #000000;
+  border-color: #d4af37;
+  font-weight: 600;
+  transition: all var(--animation-duration-normal) ease;
+}
+
+.emailButton:hover {
+  background-color: color-mix(in srgb, #d4af37, white 15%);
+  border-color: color-mix(in srgb, #d4af37, white 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.phoneButton {
+  background-color: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  font-weight: 600;
+  transition: all var(--animation-duration-normal) ease;
+}
+
+.phoneButton:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-color: color-mix(in srgb, #d4af37, white 15%);
+  color: color-mix(in srgb, #d4af37, white 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 768px) {
+  .partnership {
+    padding: var(--spacing-12) 0;
+  }
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+  
+  .contactButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+}

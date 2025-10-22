@@ -1,0 +1,107 @@
+.features {
+  padding: var(--spacing-16) 0;
+  background-color: #000000;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-8);
+  text-align: center;
+}
+
+.header {
+  margin-bottom: var(--spacing-12);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 3rem);
+  font-weight: 800;
+  color: #d4af37;
+  margin-bottom: var(--spacing-4);
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem);
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.featureCard {
+  background-color: #0a0a0a;
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition:
+    transform var(--animation-duration-normal) ease,
+    box-shadow var(--animation-duration-normal) ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  padding: var(--spacing-3);
+  background-color: rgba(212, 175, 55, 0.1);
+  border-radius: var(--radius-full);
+  color: #d4af37;
+  margin-bottom: var(--spacing-4);
+}
+
+.iconWrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.featureTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-2);
+}
+
+.featureDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: var(--spacing-12) 0;
+  }
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
+  .featureCard {
+    padding: var(--spacing-6);
+  }
+
+  .featureTitle {
+    font-size: 1.125rem;
+  }
+
+  .featureDescription {
+    font-size: 0.9375rem;
+  }
+}
